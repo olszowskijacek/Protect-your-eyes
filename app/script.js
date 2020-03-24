@@ -9,6 +9,7 @@ const formatTime = time => {
   );
 };
 
+const bell = new Audio('./sounds/bell.wav');
 
 class App extends React.Component {
   constructor() {
@@ -26,6 +27,7 @@ class App extends React.Component {
       time: this.state.time - 1
     });
     if (this.state.time === 0) {
+      bell.play();
       if (this.state.status === 'work') {
         this.setState({status: 'rest', time: 20});
       } 
