@@ -68,8 +68,8 @@ class App extends React.Component {
             <p>This app will help you track your time and inform you when it's time to rest.</p>
           </div>
         )}
-        {(status === 'work') && <img src="./images/work.png" />}
-        {(status === 'rest') && <img src="./images/rest.png" />}
+        {(status === 'work') && <img src="./images/Work.png" />}
+        {(status === 'rest') && <img src="./images/Rest.png" />}
         {(status !== 'off') && <div className="timer">{formatTime(time)}</div>}
         {(status === 'off') && <button className="btn" onClick={this.startTimer}>Start</button>}
         {(status !== 'off') && <button className="btn" onClick={this.stopTimer}>Stop</button>}
