@@ -21,11 +21,24 @@ class App extends React.Component {
     };
   }
 
-  step = () => {};
+  step = () => {
+    this.setState({
+      time: this.state.time - 1
+    });
+    if (this.state.time === 0) {
+      if (this.state.status === 'work') {
+        this.setState({status: 'rest', time: 20});
+      } 
+      else if (this.state.status === 'rest') {
+        this.setState({status: 'work', time: 1200});
+      }
+    }
+  };
 
   startTimer = () => {
     this.setState({
-      timer: setInterval(this.step, 1200),
+      timer: setInterval(this.step, 1000),
+      time: 1200,
       status: 'work'
     });
   };
